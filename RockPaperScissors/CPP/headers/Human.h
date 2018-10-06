@@ -14,8 +14,9 @@
 class Human : public Player
 {
 public:
+  Human();
   bool validateInput(std::string);
-  void promptForMove();
+  std::string promptForMove();
 };
 
 #endif

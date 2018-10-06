@@ -6,19 +6,26 @@
 #include <iostream>
 #include "Human.h"
 
+// Constructor for human class, prompts player for their move
+Human::Human()
+{
+  setMove(promptForMove());
+}
+
 // Verifies user has entered valid move
 bool Human::validateInput(std::string m)
 {
   if(m != "rock" && m != "scissors" && m != "paper")
   {
-    std::cout << "Invalid input, expecting \"Rock\", \"Paper\", or \"Scissors\"\n";
+    std::cout << "Invalid input, expecting \"rock\", \"paper\", or \"scissors\"\n";
+    std::cout << "(lower case)\n";
     return false;
   }
 
   return true;
 }
 
-void Human::promptForMove()
+std::string Human::promptForMove()
 {
   std::string move;
 
@@ -29,4 +36,6 @@ void Human::promptForMove()
     std::cout << "Enter your move: ";
     std::cin >> move;
   } while(!validateInput(move));
+
+  return move;
 }

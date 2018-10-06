@@ -8,12 +8,18 @@
 #include <iostream>
 #include <string>
 #include "Human.h"
+#include "CPU.h"
+#include "Score.h"
+#include "Game.h"
 
 int main()
 {
   Human *p1 = new Human();
+  CPU *p2 = new CPU();
+  Score *s = new Score();
+  Game *g = new Game();
 
-  p1->promptForMove();
+  g->compareMoves(p1, p2, s);
 
   return 0;
 }

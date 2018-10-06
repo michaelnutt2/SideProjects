@@ -15,10 +15,21 @@ Player::~Player()
 void Player::setMove(std::string m)
 {
   move = m;
+  if(move == "rock")
+    choice = rock;
+  else if(move == "paper")
+    choice = paper;
+  else
+    choice = scissors;
 }
 
 // Returns player move
 std::string Player::returnMove()
 {
   return move;
+}
+
+moves Player::returnChoice()
+{
+  return choice;
 }
